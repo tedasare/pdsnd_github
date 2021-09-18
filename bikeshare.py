@@ -106,6 +106,9 @@ def load_data(city, month, day):
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
 
+    # applying city, month, day filters to raw data dataframe
+    loaded_df = loaded_df[loaded_df.index.isin(df.index)]
+
     return df, loaded_df
 
 
