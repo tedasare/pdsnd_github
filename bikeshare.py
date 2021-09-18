@@ -72,8 +72,8 @@ def load_data(city, month, day):
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     Returns:
-        df - Pandas DataFrame containing city data filtered by month, day, and hour
-        loaded_df - Pandas DataFrame containing data loaded from data file
+        df - Pandas DataFrame containing city data filtered by month and day
+        loaded_df - Pandas DataFrame containing data loaded from data file filtered by city, month, and day
     """
 
     # load data file into a dataframe
