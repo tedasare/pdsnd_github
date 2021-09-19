@@ -14,6 +14,12 @@ Data provided by [Motivate](https://www.motivateco.com/), a bike share system pr
 
  The data files can be accessed here ([Chicago](https://www.divvybikes.com/system-data),  [New York City](https://www.citibikenyc.com/system-data),  [Washington](https://www.capitalbikeshare.com/system-data)).
 
+ ### **Usage**
+ Run the interactive program in the terminal with the following command:
+ ```
+ python bikeshare.py
+ ```
+
 ### **Date created**
 18-Sep-21
 
