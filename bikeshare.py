@@ -111,11 +111,10 @@ def load_data(city, month, day):
     return df, loaded_df
 
 
-def data_viewer(df, chunk_size):
+def data_viewer(df, n):
     """Displays raw data of descriptive statitics 5 lines at a time."""
 
     i = 0
-    # chunk_size = 5
     while True:
         try:
             # error handling EOFError when taking input
@@ -138,10 +137,10 @@ def data_viewer(df, chunk_size):
 
             # display raw data 5 lines of raw data
             if i < len(trip_records):
-                subset = trip_records[i : i + chunk_size]
+                subset = trip_records[i : i + n]
                 for trip_data in subset:
                     pprint(trip_data)
-                i += chunk_size
+                i += n
             else:
                 # end of records
                 print('\nNo more data to display\n')
