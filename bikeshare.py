@@ -115,7 +115,7 @@ def data_viewer(df):
     """Displays raw data of descriptive statitics 5 lines at a time."""
 
     i = 0
-    size = 5
+    chunk_size = 5
     while True:
         try:
             # error handling EOFError when taking input
@@ -138,10 +138,10 @@ def data_viewer(df):
 
             # display raw data 5 lines of raw data
             if i < len(trip_records):
-                subset = trip_records[i : i + size]
+                subset = trip_records[i : i + chunk_size]
                 for trip_data in subset:
                     pprint(trip_data)
-                i += size
+                i += chunk_size
             else:
                 # end of records
                 print('\nNo more data to display\n')
