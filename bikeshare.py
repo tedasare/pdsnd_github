@@ -205,9 +205,9 @@ def time_converter(seconds):
         (int/float) s - time in seconds only
     """
 
-    m, s = seconds // 60, seconds % 60
-    h, m = m // 60, m % 60
-    d, h = h // 24, h % 24
+    m, s = divmod(seconds, 60)
+    h, m = divmod(m, 60)
+    d, h = divmod(h, 24)
 
     return int(d), int(h), int(m), s
 
