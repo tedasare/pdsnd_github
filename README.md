@@ -12,7 +12,10 @@ This project utilizes bike share data to compare bike usage patterns among three
 ### **Files used**
 Data provided by [Motivate](https://www.motivateco.com/), a bike share system provided, for the first six months of 2017 are used for Chicago, New York City and Washington.
 
- The data files can be accessed here ([Chicago](https://www.divvybikes.com/system-data),  [New York City](https://www.citibikenyc.com/system-data),  [Washington](https://www.capitalbikeshare.com/system-data)).
+ The data files used can be accessed here:
+ - [chicago.scv](https://www.divvybikes.com/system-data)
+ - [new_york_city.csv](https://www.citibikenyc.com/system-data)
+ - [washington.csv](https://www.capitalbikeshare.com/system-data)
 
  ### **Usage**
  Run the interactive program in the terminal with the following command:
