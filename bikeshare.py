@@ -91,7 +91,6 @@ def load_data(city, month, day):
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
 
-
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
@@ -112,11 +111,10 @@ def load_data(city, month, day):
     return df, loaded_df
 
 
-def data_viewer(df):
-    """Displays raw data of descriptive statitics 5 lines at a time."""
+def data_viewer(df, n):
+    """Displays raw data of descriptive statitics n lines at a time."""
 
     i = 0
-    size = 5
     while True:
         try:
             # error handling EOFError when taking input
@@ -139,10 +137,10 @@ def data_viewer(df):
 
             # display raw data 5 lines of raw data
             if i < len(trip_records):
-                subset = trip_records[i : i + size]
+                subset = trip_records[i : i + n]
                 for trip_data in subset:
                     pprint(trip_data)
-                i += size
+                i += n
             else:
                 # end of records
                 print('\nNo more data to display\n')
@@ -207,9 +205,9 @@ def time_converter(seconds):
         (int/float) s - time in seconds only
     """
 
-    m, s = seconds // 60, seconds % 60
-    h, m = m // 60, m % 60
-    d, h = h // 24, h % 24
+    m, s = divmod(seconds, 60)
+    h, m = divmod(m, 60)
+    d, h = divmod(h, 24)
 
     return int(d), int(h), int(m), s
 
@@ -275,7 +273,7 @@ def main():
             station_stats(df)
             trip_duration_stats(df)
             user_stats(df)
-            data_viewer(loaded_df)
+            data_viewer(loaded_df, 5)
 
             try:
                 # error handling EOFError when taking input
