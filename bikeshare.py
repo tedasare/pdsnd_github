@@ -111,11 +111,11 @@ def load_data(city, month, day):
     return df, loaded_df
 
 
-def data_viewer(df):
+def data_viewer(df, chunk_size):
     """Displays raw data of descriptive statitics 5 lines at a time."""
 
     i = 0
-    chunk_size = 5
+    # chunk_size = 5
     while True:
         try:
             # error handling EOFError when taking input
@@ -274,7 +274,7 @@ def main():
             station_stats(df)
             trip_duration_stats(df)
             user_stats(df)
-            data_viewer(loaded_df)
+            data_viewer(loaded_df, 5)
 
             try:
                 # error handling EOFError when taking input
