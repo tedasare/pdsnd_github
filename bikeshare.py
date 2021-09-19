@@ -112,7 +112,7 @@ def load_data(city, month, day):
 
 
 def data_viewer(df, n):
-    """Displays raw data of descriptive statitics 5 lines at a time."""
+    """Displays raw data of descriptive statitics n lines at a time."""
 
     i = 0
     while True:
